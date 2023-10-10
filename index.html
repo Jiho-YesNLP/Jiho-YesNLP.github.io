@@ -1,110 +1,345 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jiho Noh</title>
-  <link rel="icon" type="image/png" href="favicon_io/favicon-32x32.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- Favicons-->
+  <link rel="icon" type="image/png" href="a/img/favicon_io/favicon-32x32.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <link href="css/main.css" rel="stylesheet" type="text/css">
-  <!-- Add a favicon -->
-  <link rel="icon" type="image/png" href="a/img/favicon_io/favicon-32x32.png">
+
+  <!-- Vendor CSS Files -->
+  <!-- AOS: Animated Scroll -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Boxicons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="a/css/main.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <!-- Navigation bar -->
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand">Jiho Noh</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"> <i class="fas fa-home"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="publication.html"> <i class="fas fa-book"></i> Publication</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="projects.html"> <i class="fas fa-database"></i> Projects/Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="teaching.html"> <i class="fas fa-university"></i> Teaching/Services</a>
-          </li>
-        </ul>
-      </div>
+  <!-- Mobile nav toggle button -->
+  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+
+  <!-- Header -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#projects" class="nav-link scrollto"><i class="bx bxl-graphql"></i> <span>Projects</span></a></li>
+        <li><a href="#publication" class="nav-link scrollto"><i class="bx bx-pencil"></i> <span>Publication</span></a></li>
+        <li><a href="#teaching" class="nav-link scrollto"><i class="bx bxs-graduation"></i> <span>Teaching</span></a></li>
+      </ul>
     </nav>
-  </div>
-  <!-- bio and contact -->
-  <div class="container mt-3">
-    <div class="row">
-      <div class="col-md-5 order-md-last">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://romanegloo.github.io/images/JihoNoh.jpg" class="img-thumbnail float-right" style="width:120px;">
-            <h5 class="card-title">Contact Information</h5>
-            <p class="card-text" style="font-size: 0.8rem;">
-              <a href="https://ccse.kennesaw.edu/cs/index.php">Department of Computer Science</a>,<br />
-              <a href="https://www.kennesaw.edu/">Kennesaw State University</a>,<br />
-              Atrium Building #J-341,<br/>
-              <i class="far fa-envelope" title="email"></i> jnoh3@kennesaw.edu<br />
-              <i class="far fa-phone" title="phone"></i>470-578-6355<br />
-            </p>
+  </header>
+
+  <!-- Hero -->
+   <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Jiho Noh</h1>
+      <p>
+      My specializations are in 
+      <span class="typed"
+        data-typed-items="Machine Learning, Natural Language Processing, Artificial Intelligence, Search and Recommender Systems"></span>
+      </p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          Jiho's <b>research interests</b> include the following topics: &clubs; Generative AI for Knowledge
+          Representation, &clubs; Neural representation learning for knowledge discovery, &clubs; Text processing
+          including data mining, information extraction, entity recognition and knowledge database construction, and 
+          &clubs; Conversation techniques in information retrieval. If you are interested in discussing research
+          topics with him, please contact me via <a href="mailto:jnoh3@kennesaw.edu">email</a>.
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="https://romanegloo.github.io/images/JihoNoh.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+            <h3>Affiliated Positions</h3>
+            <p class="fst-italic"> Assistant Professor, Department of Computer Science, Kennesaw State University </p>
+            <div class="row">
+              <div class="col-lg">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> 
+                    <strong>Office:</strong> <span>Atrium Building #J-341</span></li>
+                  <li><i class="bi bi-chevron-right"></i> 
+                    <strong>Email:</strong> <span>jnoh3@kennesaw.edu</span></li>
+                  <li><i class="bi bi-chevron-right"></i> 
+                    <strong>Phone:</strong> <span>470-578-6355</span></li>
+                </ul>
+              </div>
+            </div>
+            <h3>Updates!</h3>
+            <div class="row">
+              <div class="col-lg">
+                <p><strong>Sep 26, 2023</strong> &ndash; I am attending "Task Focused IR in the Era of Generative AI"
+                at Microsoft Research, Redmond, WA, USA.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Projects Section ======= -->
+    <section id="projects" class="projects">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <h3 class="project-title">2022</h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="project-item">
+              <h4>Survey on Conversational Search and Applications in Biomedicine</h4>
+              <p><em>A literature review on conversational search techniques for information retrieval and applications
+                in the biomedical domains.</em></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="project-item">
+              <h4>Graph Representation Learning for IR and Ontology Construction</h4> 
+              <p><em>Graph representation
+                learning using various meta-paths and the applications in information retrieval and ontology
+                construction tasks.</em></p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="project-title">2020</h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="project-item">
+              <h4>Joint Model for Entity Recognition and Normalization</h4>
+              <p><em>Design a joint model utilizing neural network architecture for mention detection and entity linking within a biomedical ontology (i.e., UMLS concepts).</em></p>
+            </div>
+            <div class="project-item">
+              <h4>Misleading Information on Twitter Regarding Nicotine as Potential Prophylactic or Therapeutic for COVID-19</h4>
+              <p><em>Predictive model using CBA algorithm (apriori association rules) for identifying tweets with misleading information, especially on the use of smoking (vaping) for COVID-19. </em></p>
+            </div>
+            <div class="project-item">
+              <h4>Identifying Special Interest Groups on Twitter and the Effects of Twitter's interventions</h4>
+              <p><em>Data analytics on the perspectives of a special interest group (i.e., QAnon) towards the COVID related events.</em></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="project-item">
+              <h4>Document Retrieval using Neural Text Summarization</h4>
+              <p><em>Scholarly document retrieval for precision medicine using deep learning methods for document classification and text summarization.
+
+</em></p>
+            </div>
+            <div class="project-item">
+              <h4>BMET (BioMedical Entity Tagged) Embeddings</h4>
+              <p><em>Learning joint word-concept embeddings from the biomedical entity annotated corpus. We use the MeSH (Medical Subject Headings) codes for representing biomedical entities.</em></p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="project-title">2017</h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="project-item">
+              <h4>Kratylos: Unified linguistic corpora from diverse data sources</h4>
+              <p><em>developed a document management system that serves the (computational) linguistic researchers for managing and accessing the lexical and corpus datasets </em></p>
+              <p style="font-size: 0.8em;">(Fundedby Endangered Language Alliance (ELA) and University of Kentucky)</p>
+            </div>
           </div>
         </div>
       </div>
-      <div id="content" class="col-md-7 order-md-first align-middle pt-3">
-        <section>
-          <h2>Affliation</h2>
-          <ul>
-            <li>Assistant Professor, Department of Computer Science, Kennesaw State University</li>
-          </ul>
-        </section>
+    </section><!-- End Projects Section -->
 
-        <section>
-          <h2>Research Interests</h2>
-          Jiho has specialties in Search and Recommender Systems, Machine Learning, and Artificial Intelligence with a focus on Natural Language Processing. His research interests include the following topics:
-          <ul>
-            <li>Generative AI for Knowledge Representation</li>
-            <li>Neural representation learning for knowledge discovery</li>
-            <li>Text processing including data mining, information extraction, entity recognition and knowledge
-              database construction</li>
-            <li>Conversation techniques in information retrieval</li>
-          </ul>
-        </section>
+    <!-- ======= Projects Section ======= -->
+    <section id="publication" class="publication">
+      <div class="container" data-aos="fade-up">
 
-        <p> If you are interested in discussing research topics, please contact me via <a href="mailto:jnoh3@kennesaw.edu">email</a>.</p>
-      </div>
-    </div>
-    <section class="row mt-3">
-      <div class="col">
-        <div class="alert alert-success" role="alert">
-          <h4 class="alert-heading">Updates!</h4>
-          <ul style="list-style: none;">
-            <li>
-              <strong>Sep 5, 2022</strong> &ndash; Our paper "<em>Improving Fashion Attribute Classification Accuracy
-              with Limited Labeled Data using Transfer Learning</em>" is accepted as a full paper to 20th IEEE
-              International Conference on Machine Learning and Applications (ICMLA). Congratulations all!
-            </li>
-            <li>
-              <strong>Aug 27, 2022</strong> &ndash; A new project on "Graph Representational Learning for IR" initiated.
-            </li>
-            <li>
-              <strong>Aug 15, 2022</strong> &ndash; A new Ph.D. student joined YesNLP lab. Welcome, Syed Alam~!
-            </li>
-          </ul>
+        <div class="section-title">
+          <h2>Publication</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5>2022</h5>
+            <ul style="line-height: 2em;">
+              <li>
+                Tong, C., Jiho, N., Luke C., John M., &amp; Junggab S. "Improving Fashion Attribute Clasification
+                Accuracy with Limited Labeled Data using Transfer Learning." 2022 20th IEEE International Conference on
+                Machine Learning and Applications.
+              </li>
+              <li>
+                Naga, K., Gowtham, G. &amp; Jiho N. "A Survey on Conversational Search and Applications in Biomedicine."
+                pre-print.
+            </ul>
+            <h5>2021</h5>
+            <ul style="line-height: 2em;">
+              <li>Noh, Jiho, and Ramakanth Kavuluru, "Joint Learning for Biomedical NER and Entity Normalization: Encoding Schemes, Counterfactual Examples, and Zero-Shot Evaluation." BCB '21: Proceedings of the ACM Conference on Bioinformatics, Computational Biology and Biomedicine. July 2021 <a href="./docs/rt002.pdf" class="badge badge-info">pdf</a></li>
+              <li>Noh, Jiho, "Neural Representations of Concepts and Texts for Biomedical Information Retrieval" (2021). Theses and Dissertations--Computer Science. 102. <a href="https://uknowledge.uky.edu/cs_etds/102" class="badge badge-info">pdf</a></li>
+              <li>Noh, Jiho, and Ramakanth Kavuluru, "Improving Static Biomedical Word Embeddings using Concept Relationship in the Corpus and Ontology." Journal of Biomedical Informatics. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1532046421001969?CMX_ID=&SIS_ID=&dgcid=STMJ_AUTH_SERV_PUBLISHED&utm_acid=140413525&utm_campaign=STMJ_AUTH_SERV_PUBLISHED&utm_in=DM168036&utm_medium=email&utm_source=AC_" class="badge badge-info">pdf</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5>2020</h5>
+            <ul style="line-height: 2em;">
+              <li>Noh, Jiho, and Ramakanth Kavuluru, Literature Retrieval for Precision Medicine using Neural Matching and
+                Faceted Summarization. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language
+                Processing (EMNLP) 2020 Nov. <a href="./docs/Jiho-emnlp2020.pdf" class="badge badge-info">pdf</a></li>
+              <li>Ramakanth Kavuluru, Jiho Noh, and Shyanika W. Rose, Twitter Discourse on Nicotine as Potential
+                Prophylactic or Therapeutic for COVID-19.
+                <a href="https://www.medrxiv.org/content/10.1101/2021.01.05.21249284v1" class="badge badge-info">pdf</a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5>2019</h5>
+            <ul style="line-height: 2em;">
+              <li>Noh, Jiho, and Ramakanth Kavuluru. "Document Retrieval for Biomedical Question Answering with Neural
+                Sentence Matching." 2018 17th IEEE International Conference on Machine Learning and Applications (ICMLA).
+                IEEE, 2018.</li>
+              <li>Noh, Jiho, and Ramakanth Kavuluru. "Team UKNLP at TREC 2017 Precision Medicine Track: A Knowledge-Based IR
+                System with Tuned Query-Time Boosting." TREC. 2017.</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
-  </div>
+    </section><!-- End Publication Section -->
+        <!-- ======= Teaching Section ======= -->
+    <section id="teaching" class="teaching">
+      <div class="container" data-aos="fade-up">
 
+        <div class="section-title">
+          <h2>Teaching</h2>
+          <p>"One of the essential tenets of my teaching philosophy is the belief that education should be an ongoing process of inspiring students to recognize how the subjects they are learning are conntected to their abilities." -- from Jiho's statement of teaching philosophy</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-blue">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+                </svg>
+                <i class="bx bi-card-text"></i>
+              </div>
+              <h4><a href="">Information Retrieval</a></h4>
+              <p> Information Retrieval is a course that focuses on the techniques and algorithms used to search and retrieve information from large collections of data. It covers topics such as indexing, query processing, relevance feedback, and text mining. The course also covers the use of search engines and other information retrieval systems. </p>
+              <p>[Fall21, Fall22, Fall23]</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-orange ">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
+                </svg>
+                <i class="bx bi-gpu-card"></i>
+              </div>
+              <h4><a href="">Machine Learning</a></h4>
+              <p> Machine Learning is a course that focuses on the development of algorithms and techniques used to make predictions and decisions from data. It covers topics such as supervised and unsupervised learning, neural networks, deep learning, and reinforcement learning. </p>
+              <p>[Sp22, Sp23, Fall23]</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-pink">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
+                </svg>
+                <i class="bx bi-database"></i>
+              </div>
+              <h4><a href="">Database Systems</a></h4>
+              <p> Database Systems is a course that focuses on the design, implementation, and management of databases. It covers topics such as relational databases, query languages, data modeling, and database security.</p>
+              <p>[Sp22, Sm22]</p>
+            </div>
+          </div>
+
+          <!--<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">-->
+          <!--  <div class="icon-box iconbox-yellow">-->
+          <!--    <div class="icon">-->
+          <!--      <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">-->
+          <!--        <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>-->
+          <!--      </svg>-->
+          <!--      <i class="bx bx-layer"></i>-->
+          <!--    </div>-->
+          <!--    <h4><a href=""></a></h4>-->
+          <!--    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>-->
+          <!--  </div>-->
+          <!--</div>-->
+
+          <!--<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">-->
+          <!--  <div class="icon-box iconbox-red">-->
+          <!--    <div class="icon">-->
+          <!--      <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">-->
+          <!--        <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>-->
+          <!--      </svg>-->
+          <!--      <i class="bx bx-slideshow"></i>-->
+          <!--    </div>-->
+          <!--    <h4><a href="">Dele Cardo</a></h4>-->
+          <!--    <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>-->
+          <!--  </div>-->
+          <!--</div>-->
+
+          <!--<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">-->
+          <!--  <div class="icon-box iconbox-teal">-->
+          <!--    <div class="icon">-->
+          <!--      <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">-->
+          <!--        <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>-->
+          <!--      </svg>-->
+          <!--      <i class="bx bx-arch"></i>-->
+          <!--    </div>-->
+          <!--    <h4><a href="">Divera Don</a></h4>-->
+          <!--    <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>-->
+          <!--  </div>-->
+          <!--</div>-->
+
+        </div>
+
+      </div>
+    </section><!-- End Teaching Section -->
+
+  </main>
+
+  <!-- Vendor JS Files -->
+  <!-- AOS: Animated Scroll -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -123,6 +358,9 @@
 
     gtag('config', 'G-JC6R0CB8W1');
   </script>
+
+  <!-- Main JS File -->
+  <script src="a/js/main.js"></script>
 </body>
 
 </html>

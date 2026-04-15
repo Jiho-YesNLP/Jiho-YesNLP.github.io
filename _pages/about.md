@@ -11,10 +11,7 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-  more_info: >
-    <p>jnoh3@kennesaw.edu</p>
-    <p>Kennesaw State University</p>
-    <p>Marietta, GA</p>
+  more_info:
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"

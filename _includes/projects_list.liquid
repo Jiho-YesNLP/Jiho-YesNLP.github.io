@@ -1,0 +1,29 @@
+<div class="project-list-item">
+  <div class="project-list-icon">
+    <i class="fa-regular fa-circle-dot"></i>
+  </div>
+  <div class="project-list-body">
+    <h3 class="project-list-title">
+      <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+        {{ project.title | upcase }}
+      </a>
+    </h3>
+    <p class="project-list-description">{{ project.description }}</p>
+    {% if project.team %}
+      <p class="project-list-meta">Team members: {{ project.team }}</p>
+    {% endif %}
+    {% if project.funding %}
+      <p class="project-list-meta">Supported by {{ project.funding }}</p>
+    {% endif %}
+    <div class="project-list-links">
+      <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" title="Project page">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+      {% if project.github %}
+        <a href="{{ project.github }}" title="Code Repository">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

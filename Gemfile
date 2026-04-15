@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+# Pin sass-embedded: 1.99.0+ treats global-builtin deprecations as fatal errors
+# which breaks jekyll-sass-converter with tabler-icons and font-awesome.
+gem 'sass-embedded', '< 1.99.0'
 # Ruby 4.0 removed these from stdlib; required by various jekyll dependencies
 gem 'observer'
 gem 'ostruct'

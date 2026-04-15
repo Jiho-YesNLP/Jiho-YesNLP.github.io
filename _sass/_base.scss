@@ -499,6 +499,35 @@ footer.sticky-bottom {
   transform: translateX(-15px) translateY(-5px);
 }
 
+// News
+
+.news {
+  table {
+    th {
+      color: var(--global-text-color-light);
+      font-weight: normal;
+    }
+
+    td {
+      color: var(--global-text-color);
+
+      a.news-title {
+        color: var(--global-text-color);
+        font-weight: 600;
+
+        &:hover {
+          color: var(--global-theme-color);
+        }
+      }
+
+      a {
+        color: var(--global-theme-color);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 // Repositories
 
 @media (min-width: 768px) {

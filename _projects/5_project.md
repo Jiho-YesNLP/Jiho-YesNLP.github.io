@@ -36,6 +36,4 @@ A **RoBERTa-base** classifier processes each utterance within a surrounding cont
 | SR-I | Scientific Reasoning (Inferential) — patterns, hypotheses, models |
 | NA   | Not Applicable — procedural or management talk |
 
-**Dataset:** [YesNLP/Transcripts\_Coded\_forADAS](https://huggingface.co/datasets/YesNLP/Transcripts_Coded_forADAS) on HuggingFace.
-
 **Team:** Raymond Carl, Mukhesh Raghava Katragadda, Dr. Soon Lee, Dr. Jiho Noh

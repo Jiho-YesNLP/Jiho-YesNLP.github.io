@@ -2,7 +2,7 @@
 layout: post
 title: Paper accepted at AINA 2025
 date: 2025-03-01
-inline: false
+inline: true
 related_posts: false
 ---
 

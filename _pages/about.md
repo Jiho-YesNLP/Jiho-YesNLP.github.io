@@ -5,7 +5,7 @@ permalink: /
 subtitle: >
   Assistant Professor, <a href="https://campus.kennesaw.edu/colleges-departments/ccse/academics/computer-science/index.php">Department of Computer Science</a>,
   <a href="https://www.kennesaw.edu/">Kennesaw State University</a><br/>
-  Director, <a href="https://yesnlp.github.io">Cognition and Learning Design Lab</a>
+  Lab Director, <a href="https://yesnlp.us">Cognition and Learning Design Lab</a>
 
 profile:
   align: right
@@ -18,7 +18,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I'm an Assistant Professor of Computer Science at [Kennesaw State University](https://www.kennesaw.edu/), where I direct the **[Cognition and Learning Design Lab](https://yesnlp.github.io)**. My research sits at the intersection of **Natural Language Processing (NLP)**, **Information Retrieval (IR)**, and the science of human learning — building AI systems that understand, support, and adapt to learners.
+I'm an Assistant Professor of Computer Science at [Kennesaw State University](https://www.kennesaw.edu/), where I direct the **[Cognition and Learning Design Lab](https://yesnlp.us). My research sits at the intersection of **Natural Language Processing (NLP)**, **Information Retrieval (IR)**, and the science of human learning — building AI systems that understand, support, and adapt to learners.
 
 My work focuses on three intertwined problems: 1) designing intelligent tutoring and feedback systems grounded in how people actually learn, drawing on knowledge tracing and student modeling; 2) making AI-driven educational systems interpretable and trustworthy for both teachers and students, through explainable learning analytics and human-centered design; 3) leveraging large language models to personalize educational experiences at scale — from adaptive content delivery to automated assessment and formative feedback. I ground this work in empirical user studies, educational data mining, and real classroom deployments.
 

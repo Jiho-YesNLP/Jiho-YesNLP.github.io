@@ -95,6 +95,13 @@
                   </div>
                 </li>
               {% else %}
+                {% if p.external_link %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ p.external_link }}" target="_blank" rel="noopener noreferrer">
+                    {{- p.title -}}
+                  </a>
+                </li>
+              {% else %}
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
                 <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
                   {% if p.permalink contains '/blog/' %}{% assign url = '/blog/' %} {% else %}{% assign url = p.url %}{% endif %}
@@ -105,6 +112,7 @@
                     {% endif %}
                   </a>
                 </li>
+              {% endif %}
               {% endif %}
             {% endif %}
           {% endfor %}

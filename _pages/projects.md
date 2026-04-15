@@ -16,13 +16,13 @@ display_categories: [current, past]
     <h2 class="category">{{ category }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
+  {% assign sorted_projects = categorized_projects | sort: "name" | reverse %}
   {% for project in sorted_projects %}
     {% include projects_list.liquid %}
   {% endfor %}
   {% endfor %}
 {% else %}
-  {% assign sorted_projects = site.projects | sort: "importance" %}
+  {% assign sorted_projects = site.projects | sort: "name" | reverse %}
   {% for project in sorted_projects %}
     {% include projects_list.liquid %}
   {% endfor %}

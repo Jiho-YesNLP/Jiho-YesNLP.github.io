@@ -37,3 +37,10 @@ No build step beyond `bundle install` is needed. `_site/` is the generated outpu
 - **News** items with `inline: true` render as one-liners on the homepage panel (max 5 shown, controlled by `announcements.limit` in `_config.yml`).
 - **Theming** is light-only (`enable_darkmode: false` in `_config.yml`). CSS custom properties are defined in `_sass/_themes.scss` under `:root`.
 - **Google Scholar ID** is `Gxps8DsAAAAJ` — used for Scholar citation badges on publications.
+
+
+## Protocol
+
+### Update CV
+
+The working directory for generating the current CV is `/Users/jnoh3/personal/profile/cv_biosketches/cv-source` When additional information is provided to update the CV, update the latex source files in that directory, recompile, and copy the generated PDF to `assets/pdf/cv.pdf` in this repository. Once all the updates are made, commit the changes to the repository and push to `main` to trigger deployment.

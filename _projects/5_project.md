@@ -24,17 +24,4 @@ Classroom discourse encodes rich information about students' cognitive engagemen
 2. What co-occurrence and sequential patterns of utterance types and reasoning components characterize science classroom discourse?
 3. How does students' cognitive complexity evolve over a lesson, and which teacher moves are associated with shifts toward higher-order reasoning?
 
-**Approach:**
-
-A **RoBERTa-base** classifier processes each utterance within a surrounding context window (speaker-tagged), jointly predicting utterance type (10-class) and reasoning component (4-class). To address severe class imbalance, LLM-generated synthetic examples augment the minority RC classes (SR-I, ER) to ≥15% of the dominant class count. Discourse pattern analysis includes UT×RC co-occurrence tables, FP-Growth frequent itemset mining, temporal cognitive complexity tracking, and lag-sequential analysis of teacher move → student reasoning transitions.
-
-**Coding Scheme (RC — 4 classes):**
-
-| Code | Meaning |
-|------|---------|
-| ER   | Everyday Reasoning — informal, anecdotal, pre-scientific |
-| SR-D | Scientific Reasoning (Descriptive) — declarative facts, observations |
-| SR-I | Scientific Reasoning (Inferential) — patterns, hypotheses, models |
-| NA   | Not Applicable — procedural or management talk |
-
 **Team:** Raymond Carl, Mukhesh Raghava Katragadda, Dr. Soon Lee, Dr. Jiho Noh

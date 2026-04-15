@@ -683,6 +683,68 @@ footer.sticky-bottom {
   }
 }
 
+// Project list layout
+
+.project-list-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  align-items: flex-start;
+
+  .project-list-icon {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    padding-top: 0.15rem;
+    color: var(--global-theme-color);
+  }
+
+  .project-list-body {
+    flex: 1;
+
+    .project-list-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+
+      a {
+        color: var(--global-text-color);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+
+    .project-list-description {
+      font-style: italic;
+      margin-bottom: 0.4rem;
+      font-size: 0.92rem;
+    }
+
+    .project-list-meta {
+      font-size: 0.88rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-list-links {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.6rem;
+
+      a {
+        font-size: 1rem;
+        color: var(--global-text-color);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+  }
+}
+
 // Publications
 
 .publications {

@@ -24,4 +24,4 @@ The research develops two RoBERTa-based classification models that utilize Large
 
 **Code:** [github.com/YesNLP/QYTL](https://github.com/YesNLP/QYTL)
 
-**Paper:** [IEEE ICSC 2025](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11036279)
+**Paper:** [IEEE ICSC 2025](https://ieeexplore.ieee.org/document/11036279)

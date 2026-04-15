@@ -14,7 +14,7 @@ funding: "Interdisciplinary Seed Grant, Kennesaw State University"
 importance: 1
 category: current
 related_publications: true
-github: https://github.com/YesNLP/ADAS-TS_Interaction_Pattern_Classification
+github: private yet
 ---
 
 This project develops an **Automated Discourse Analysis System (ADAS)** to enhance science classroom discourse by accurately distinguishing between knowledge construction and reproduction — crucial for fostering scientific reasoning.

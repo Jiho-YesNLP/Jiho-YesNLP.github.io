@@ -7,7 +7,8 @@ description: >
   By probing students' reasoning patterns with a revised 4-class RC scheme (ER, SR-D, SR-I, NA), the project
   analyzes co-occurrence and sequential discourse patterns, tracks cognitive complexity over lesson time, and
   identifies instructional moves associated with higher-order student reasoning.
-team: "Raymond Carl, Mukhesh Raghava Katragadda, Dr. Soon Lee"
+team: "Mukhesh Raghava Katragadda, Raymond Carl"
+advisors: "Dr. Soon Lee, Dr. Jiho Noh"
 importance: 3
 category: current
 related_publications: false

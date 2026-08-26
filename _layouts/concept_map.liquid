@@ -3,10 +3,12 @@
   <!-- Head -->
   <head>
     {% include head.liquid %}
+    <link rel="stylesheet" href="{{ '/assets/css/concept-map.css' | relative_url | bust_file_cache }}">
   </head>
 
   <!-- Standalone page: no navbar, no footer, fills the viewport. -->
   <body class="cm-body">
     {{ content }}
+    <script src="{{ '/assets/js/concept-map.js' | relative_url | bust_file_cache }}" defer></script>
   </body>
 </html>

@@ -6,8 +6,6 @@ description: A searchable map of the concepts I want to remember.
 nav: false
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/concept-map.css' | relative_url }}">
-
 <div class="cm-page" id="cm-wrap" data-source="{{ '/assets/json/concepts.json' | relative_url }}">
   <header class="cm-top">
     <div class="cm-search">
@@ -36,5 +34,3 @@ nav: false
     </aside>
   </div>
 </div>
-
-<script src="{{ '/assets/js/concept-map.js' | relative_url }}" defer></script>

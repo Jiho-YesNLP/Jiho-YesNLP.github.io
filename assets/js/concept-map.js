@@ -651,7 +651,18 @@
     if (e.key === "Enter") {
       clearTimeout(debounce);
       runSearch();
-    } else if (e.key === "Escape") {
+    }
+  });
+
+  // Escape is bound on the document: after clicking a node the focus is on the
+  // canvas or the panel, not the search box.
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (wrap.classList.contains("cm-viewing")) {
+      // Step back out of the figure first, then out of the search.
+      if (lastResults.length) showResults();
+      else resetToStart();
+    } else if (wrap.classList.contains("cm-active")) {
       resetToStart();
     }
   });

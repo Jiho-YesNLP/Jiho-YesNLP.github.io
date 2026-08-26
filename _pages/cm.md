@@ -24,6 +24,11 @@ nav: false
   <div class="cm-main">
     <div class="cm-stage" id="cm-stage">
       <canvas id="cm-canvas"></canvas>
+      <!-- Covers the graph while a concept is open; the canvas keeps its size. -->
+      <div class="cm-viewer" id="cm-viewer">
+        <button class="cm-viewer-close" id="cm-viewer-close" type="button" aria-label="Close concept">&times;</button>
+        <div class="cm-viewer-inner" id="cm-viewer-inner"></div>
+      </div>
     </div>
     <aside class="cm-panel" aria-live="polite">
       <div class="cm-panel-head" id="cm-panel-head"></div>

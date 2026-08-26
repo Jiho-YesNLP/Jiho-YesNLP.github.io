@@ -198,6 +198,84 @@
   color: var(--global-text-color-light);
 }
 
+/* Concept viewer — fills the graph area while a concept is open ------------ */
+
+.cm-viewer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  background-color: var(--global-card-bg-color);
+}
+
+.cm-page.cm-viewing .cm-viewer {
+  display: flex;
+}
+
+.cm-viewer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cm-viewer img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+/* Click the figure to fill the frame edge-to-edge and scroll it instead. */
+.cm-viewer-inner.cm-zoomed {
+  overflow: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.cm-viewer-inner.cm-zoomed img {
+  max-width: none;
+  max-height: none;
+  width: auto;
+  cursor: zoom-out;
+}
+
+.cm-viewer-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  z-index: 3;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--global-text-color-light);
+}
+
+.cm-viewer-close:hover {
+  color: var(--global-theme-color);
+}
+
+.cm-viewer-empty {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+.cm-viewer-empty strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+  color: var(--global-text-color);
+}
+
 /* Detail view ------------------------------------------------------------- */
 
 .cm-detail {
@@ -220,27 +298,6 @@
 .cm-detail-summary {
   font-size: 0.9rem;
   line-height: 1.5;
-}
-
-.cm-detail figure {
-  margin: 0.9rem 0;
-}
-
-.cm-detail img {
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--global-divider-color);
-  border-radius: 6px;
-  background-color: #fff;
-}
-
-.cm-detail-missing {
-  padding: 1.5rem 1rem;
-  text-align: center;
-  font-size: 0.82rem;
-  color: var(--global-text-color-light);
-  border: 1px dashed var(--global-divider-color);
-  border-radius: 6px;
 }
 
 .cm-chips {
@@ -310,6 +367,10 @@
   .cm-stage {
     height: 55vh;
     flex: 0 0 auto;
+  }
+
+  .cm-viewer {
+    padding: 0.75rem;
   }
 
   .cm-panel {

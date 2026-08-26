@@ -14,6 +14,9 @@
   const panelHead = document.getElementById("cm-panel-head");
   const panelBody = document.getElementById("cm-panel-body");
   const stage = document.getElementById("cm-stage");
+  const viewer = document.getElementById("cm-viewer");
+  const viewerInner = document.getElementById("cm-viewer-inner");
+  const viewerClose = document.getElementById("cm-viewer-close");
 
   // Monotone: every node is drawn in the same tone. The two extra colors are
   // interaction state (search hit / selected), not category.
@@ -478,6 +481,7 @@
   }
 
   function resetToStart() {
+    closeViewer();
     input.value = "";
     state.query = "";
     state.matches = null;
@@ -493,6 +497,7 @@
   }
 
   function showResults() {
+    closeViewer();
     state.selected = null;
     panelBody.innerHTML = "";
     panelHead.textContent = lastResults.length
@@ -528,13 +533,48 @@
     panelBody.scrollTop = 0;
   }
 
+  function showFigure(nd) {
+    viewerInner.classList.remove("cm-zoomed");
+    viewerInner.innerHTML = "";
+
+    if (!nd.image) {
+      const empty = el("div", "cm-viewer-empty");
+      empty.appendChild(el("strong", null, nd.label));
+      empty.appendChild(el("span", null, "No figure for this concept yet."));
+      viewerInner.appendChild(empty);
+      return;
+    }
+
+    const img = new Image();
+    img.src = nd.image;
+    img.alt = nd.label;
+    img.addEventListener("error", function () {
+      const empty = el("div", "cm-viewer-empty");
+      empty.appendChild(el("strong", null, nd.label));
+      empty.appendChild(el("span", null, "Figure not found: " + nd.image));
+      viewerInner.replaceChildren(empty);
+    });
+    img.addEventListener("click", function () {
+      viewerInner.classList.toggle("cm-zoomed");
+    });
+    viewerInner.appendChild(img);
+  }
+
+  function closeViewer() {
+    wrap.classList.remove("cm-viewing");
+    viewerInner.innerHTML = "";
+    viewerInner.classList.remove("cm-zoomed");
+  }
+
   function showDetail(id, origin) {
     const nd = state.byId.get(id);
     if (!nd) return;
     state.selected = nd;
     wrap.classList.add("cm-active");
+    wrap.classList.add("cm-viewing");
     centerOn(nd);
     draw();
+    showFigure(nd);
 
     panelHead.textContent = "Concept";
     panelBody.innerHTML = "";
@@ -542,19 +582,6 @@
     box.appendChild(el("h3", null, nd.label));
     if (nd.group) box.appendChild(el("div", "cm-detail-group", nd.group));
     if (nd.summary) box.appendChild(el("p", "cm-detail-summary", nd.summary));
-
-    if (nd.image) {
-      const fig = el("figure");
-      const img = new Image();
-      img.src = nd.image;
-      img.alt = nd.label;
-      img.loading = "lazy";
-      img.addEventListener("error", function () {
-        fig.replaceChildren(el("div", "cm-detail-missing", "Figure not found: " + nd.image));
-      });
-      fig.appendChild(img);
-      box.appendChild(fig);
-    }
 
     if (nd.keywords.length) {
       const chips = el("div", "cm-chips");
@@ -599,6 +626,7 @@
     state.query = q;
     const hits = search(q);
     if (!hits) {
+      closeViewer();
       state.matches = null;
       state.selected = null;
       lastResults = [];
@@ -628,6 +656,10 @@
     }
   });
   clearBtn.addEventListener("click", resetToStart);
+  viewerClose.addEventListener("click", function () {
+    if (lastResults.length) showResults();
+    else resetToStart();
+  });
 
   window.addEventListener("resize", resize);
 

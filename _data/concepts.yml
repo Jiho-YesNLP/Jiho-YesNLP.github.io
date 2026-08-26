@@ -1,0 +1,275 @@
+# Concept map data
+#
+# nodes:
+#   id       - unique slug, referenced by edges
+#   label    - display name on the graph
+#   group    - optional cluster label; drives node color
+#   keywords - list of search terms that should surface this concept
+#   image    - optional path to the explanatory figure (relative to site root)
+#   summary  - optional short text shown above the image in the detail panel
+#
+# edges: pairs of node ids. Order does not matter.
+
+nodes:
+  - id: transformer
+    label: Transformer
+    group: architectures
+    keywords: [transformer, encoder-decoder, vaswani, attention is all you need]
+    image: /assets/img/concepts/transformer.png
+    summary: Sequence model built entirely from attention and feed-forward blocks, with no recurrence.
+
+  - id: self-attention
+    label: Self-Attention
+    group: architectures
+    keywords: [attention, self-attention, query key value, qkv, scaled dot product]
+    image: /assets/img/concepts/self-attention.png
+    summary: Each token attends to every other token, weighting them by scaled dot-product similarity of queries and keys.
+
+  - id: multi-head-attention
+    label: Multi-Head Attention
+    group: architectures
+    keywords: [multi-head, heads, parallel attention]
+    image: /assets/img/concepts/multi-head-attention.png
+    summary: Several attention functions run in parallel on projected subspaces, then concatenate.
+
+  - id: positional-encoding
+    label: Positional Encoding
+    group: architectures
+    keywords: [position, sinusoidal, rope, rotary, absolute position]
+    summary: Injects order information into a permutation-invariant attention stack.
+
+  - id: layer-norm
+    label: Layer Normalization
+    group: training
+    keywords: [layernorm, normalization, pre-norm, post-norm]
+    summary: Normalizes activations across the feature dimension to stabilize deep-stack training.
+
+  - id: residual
+    label: Residual Connection
+    group: training
+    keywords: [residual, skip connection, resnet, identity path]
+    summary: Adds the block input to its output so gradients have a short path to early layers.
+
+  - id: embedding
+    label: Word Embedding
+    group: representations
+    keywords: [embedding, word2vec, glove, distributed representation, vector space]
+    summary: Dense vector representation of a token learned so that distributional neighbors sit nearby.
+
+  - id: contextual-embedding
+    label: Contextual Embedding
+    group: representations
+    keywords: [contextual, elmo, bert vectors, token representation]
+    summary: A token's vector depends on the sentence it appears in, resolving polysemy.
+
+  - id: tokenization
+    label: Subword Tokenization
+    group: representations
+    keywords: [tokenization, bpe, byte pair encoding, wordpiece, sentencepiece, vocabulary]
+    summary: Splits text into subword units so a fixed vocabulary can cover any string.
+
+  - id: bert
+    label: BERT
+    group: models
+    keywords: [bert, masked language model, mlm, bidirectional, pretraining]
+    summary: Bidirectional encoder pretrained with masked-token prediction, then fine-tuned per task.
+
+  - id: gpt
+    label: GPT / Causal LM
+    group: models
+    keywords: [gpt, causal, autoregressive, decoder-only, next token prediction]
+    summary: Decoder-only model trained to predict the next token given the left context.
+
+  - id: seq2seq
+    label: Sequence-to-Sequence
+    group: models
+    keywords: [seq2seq, encoder decoder, translation, t5, bart]
+    summary: Encodes a source sequence into a representation that a decoder consumes to emit a target sequence.
+
+  - id: language-model
+    label: Language Modeling
+    group: objectives
+    keywords: [language model, perplexity, likelihood, next word]
+    summary: Assigns probability to sequences; the training signal behind most modern NLP models.
+
+  - id: cross-entropy
+    label: Cross-Entropy Loss
+    group: objectives
+    keywords: [cross entropy, negative log likelihood, nll, loss function]
+    summary: Penalizes the negative log probability the model assigns to the correct label.
+
+  - id: contrastive
+    label: Contrastive Learning
+    group: objectives
+    keywords: [contrastive, infonce, simclr, positive negative pairs, self-supervised]
+    summary: Pulls matched pairs together and pushes mismatched pairs apart in representation space.
+
+  - id: fine-tuning
+    label: Fine-Tuning
+    group: training
+    keywords: [fine-tuning, transfer learning, downstream task, adaptation]
+    summary: Continues training a pretrained model on task-specific data.
+
+  - id: peft
+    label: Parameter-Efficient Tuning
+    group: training
+    keywords: [peft, lora, adapter, prefix tuning, low rank]
+    summary: Updates a small set of added parameters while the base model stays frozen.
+
+  - id: rlhf
+    label: RLHF
+    group: training
+    keywords: [rlhf, reinforcement learning, human feedback, reward model, ppo, dpo, alignment]
+    summary: Aligns model outputs with human preferences through a learned reward signal.
+
+  - id: prompting
+    label: Prompting
+    group: inference
+    keywords: [prompt, few-shot, zero-shot, in-context learning, instruction]
+    summary: Steers a frozen model by conditioning on instructions and examples at inference time.
+
+  - id: chain-of-thought
+    label: Chain-of-Thought
+    group: inference
+    keywords: [chain of thought, cot, reasoning, step by step, scratchpad]
+    summary: Prompts the model to emit intermediate reasoning steps before its answer.
+
+  - id: decoding
+    label: Decoding Strategies
+    group: inference
+    keywords: [decoding, beam search, greedy, sampling, top-k, top-p, nucleus, temperature]
+    summary: Rules for turning next-token distributions into a generated sequence.
+
+  - id: rag
+    label: Retrieval-Augmented Generation
+    group: retrieval
+    keywords: [rag, retrieval augmented, grounding, external knowledge]
+    summary: Retrieves supporting passages and conditions generation on them to ground the output.
+
+  - id: dense-retrieval
+    label: Dense Retrieval
+    group: retrieval
+    keywords: [dense retrieval, dpr, bi-encoder, ann, vector search, embedding index]
+    summary: Encodes queries and documents into one vector space and retrieves by nearest neighbor.
+
+  - id: bm25
+    label: BM25
+    group: retrieval
+    keywords: [bm25, tf-idf, sparse retrieval, lexical matching, inverted index]
+    summary: Term-frequency scoring with document-length normalization; the strong lexical baseline.
+
+  - id: reranking
+    label: Cross-Encoder Reranking
+    group: retrieval
+    keywords: [rerank, cross-encoder, monobert, second stage]
+    summary: Jointly encodes query and candidate to rescore a shortlist from first-stage retrieval.
+
+  - id: evaluation
+    label: Evaluation Metrics
+    group: evaluation
+    keywords: [evaluation, metric, bleu, rouge, f1, ndcg, mrr, accuracy]
+    summary: Quantitative measures of system quality; the choice of metric encodes what you value.
+
+  - id: hallucination
+    label: Hallucination
+    group: evaluation
+    keywords: [hallucination, faithfulness, factuality, grounding failure]
+    summary: Fluent output that is unsupported by the input or by the world.
+
+  - id: knowledge-distillation
+    label: Knowledge Distillation
+    group: training
+    keywords: [distillation, teacher student, model compression, soft targets]
+    summary: Trains a small student to match a large teacher's output distribution.
+
+  - id: attention-cost
+    label: Quadratic Attention Cost
+    group: efficiency
+    keywords: [quadratic, complexity, long context, efficiency, flash attention, sparse attention]
+    summary: Full attention scales with the square of sequence length, which bounds context size.
+
+  - id: kv-cache
+    label: KV Cache
+    group: efficiency
+    keywords: [kv cache, inference speed, incremental decoding, memory]
+    summary: Stores past keys and values so autoregressive decoding does not recompute them.
+
+  - id: lexical-relations
+    label: Lexical Relations
+    group: lexical semantics
+    keywords:
+      [
+        lexical relations,
+        lexical semantics,
+        homonymy,
+        polysemy,
+        synonymy,
+        antonymy,
+        hyponymy,
+        hypernymy,
+        meronymy,
+        holonymy,
+        is-a,
+        part-of,
+        word sense,
+        sense,
+        lexeme,
+        word form,
+        wordnet,
+        taxonomy,
+        word sense disambiguation,
+        wsd,
+      ]
+    image: /assets/img/concepts/lexical-relations.png
+    summary: How one word form fans out into senses and how those senses relate — homonymy and polysemy are relations of form, synonymy and antonymy relate equal senses, hyponymy and meronymy build hierarchy.
+
+edges:
+  - [transformer, self-attention]
+  - [transformer, positional-encoding]
+  - [transformer, layer-norm]
+  - [transformer, residual]
+  - [transformer, seq2seq]
+  - [self-attention, multi-head-attention]
+  - [self-attention, attention-cost]
+  - [self-attention, kv-cache]
+  - [embedding, contextual-embedding]
+  - [embedding, tokenization]
+  - [contextual-embedding, bert]
+  - [tokenization, language-model]
+  - [bert, transformer]
+  - [bert, fine-tuning]
+  - [bert, language-model]
+  - [gpt, transformer]
+  - [gpt, language-model]
+  - [gpt, decoding]
+  - [gpt, prompting]
+  - [seq2seq, decoding]
+  - [language-model, cross-entropy]
+  - [language-model, evaluation]
+  - [cross-entropy, contrastive]
+  - [contrastive, dense-retrieval]
+  - [fine-tuning, peft]
+  - [fine-tuning, rlhf]
+  - [fine-tuning, knowledge-distillation]
+  - [rlhf, prompting]
+  - [prompting, chain-of-thought]
+  - [prompting, rag]
+  - [chain-of-thought, hallucination]
+  - [decoding, hallucination]
+  - [decoding, evaluation]
+  - [rag, dense-retrieval]
+  - [rag, hallucination]
+  - [dense-retrieval, bm25]
+  - [dense-retrieval, reranking]
+  - [bm25, reranking]
+  - [reranking, evaluation]
+  - [evaluation, hallucination]
+  - [attention-cost, kv-cache]
+  - [kv-cache, decoding]
+  - [peft, knowledge-distillation]
+  - [layer-norm, residual]
+  - [positional-encoding, attention-cost]
+  - [lexical-relations, embedding]
+  - [lexical-relations, contextual-embedding]
+  - [lexical-relations, bm25]
+  - [lexical-relations, dense-retrieval]

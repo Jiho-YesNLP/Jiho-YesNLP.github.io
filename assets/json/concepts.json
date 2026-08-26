@@ -1,0 +1,5 @@
+---
+layout: none
+permalink: /assets/json/concepts.json
+---
+{{ site.data.concepts | jsonify }}

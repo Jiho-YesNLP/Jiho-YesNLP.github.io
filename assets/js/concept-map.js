@@ -406,6 +406,9 @@
   );
 
   function centerOn(nd) {
+    // While the layout is still settling, auto-fit owns the view — panning to a
+    // node now would only fight it, and the node is still moving.
+    if (state.alpha > 0.05) return;
     const k = Math.max(state.view.k, 1);
     const from = { x: state.view.x, y: state.view.y, k: state.view.k };
     const to = { x: width / 2 - nd.x * k, y: height / 2 - nd.y * k, k: k };
@@ -460,6 +463,52 @@
     return hits;
   }
 
+
+  /* ----------------------------------------------------------------- url */
+
+  // The page's state lives in the query string, so any view is linkable:
+  //   /cm/?c=lexical-relations        a concept, opened straight away
+  //   /cm/?q=polysemy                 a search, with its result list
+  //   /cm/?q=polysemy&c=lexical-relations
+  let applyingUrl = false;
+
+  function syncUrl(push) {
+    if (applyingUrl) return;
+    const params = new URLSearchParams();
+    if (state.query) params.set("q", state.query);
+    if (state.selected) params.set("c", state.selected.id);
+    const qs = params.toString();
+    const url = location.pathname + (qs ? "?" + qs : "");
+    if (url === location.pathname + location.search) return;
+    if (push) history.pushState(null, "", url);
+    else history.replaceState(null, "", url);
+  }
+
+  function showUnknown(id) {
+    wrap.classList.add("cm-active");
+    panelHead.textContent = "Not found";
+    panelBody.innerHTML = "";
+    panelBody.appendChild(el("p", "cm-empty", 'No concept with the id "' + id + '".'));
+    panelBody.appendChild(backLink("← Back to start", resetToStart));
+  }
+
+  function applyUrl() {
+    const params = new URLSearchParams(location.search);
+    const q = (params.get("q") || "").trim();
+    const id = params.get("c");
+
+    applyingUrl = true;
+    input.value = q;
+    if (q) runSearch();
+    else resetToStart();
+
+    if (id) {
+      if (state.byId.has(id)) showDetail(id, q ? "results" : "graph");
+      else showUnknown(id);
+    }
+    applyingUrl = false;
+  }
+
   /* -------------------------------------------------------------- panel */
 
   let lastResults = [];
@@ -493,6 +542,7 @@
     state.userMoved = false;
     fitView();
     draw();
+    syncUrl(false);
     input.focus();
   }
 
@@ -531,6 +581,7 @@
 
     panelBody.appendChild(backLink("← Back to start", resetToStart));
     panelBody.scrollTop = 0;
+    syncUrl(false);
   }
 
   function showFigure(nd) {
@@ -619,6 +670,7 @@
       panelBody.appendChild(backLink("← Back to start", resetToStart));
     }
     panelBody.scrollTop = 0;
+    syncUrl(true);
   }
 
   function runSearch() {
@@ -633,6 +685,7 @@
       wrap.classList.remove("cm-active");
       panelBody.innerHTML = "";
       draw();
+      syncUrl(false);
       return;
     }
     state.matches = new Set(hits.map((h) => h.node.id));
@@ -673,6 +726,7 @@
   });
 
   window.addEventListener("resize", resize);
+  window.addEventListener("popstate", applyUrl);
 
   /* ---------------------------------------------------------------- boot */
 
@@ -688,6 +742,7 @@
       reheat(1);
       input.disabled = false;
       input.placeholder = "Search " + state.nodes.length + " concepts…";
+      applyUrl();
     })
     .catch(function (err) {
       stage.innerHTML =

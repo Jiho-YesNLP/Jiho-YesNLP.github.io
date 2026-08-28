@@ -223,6 +223,38 @@ nodes:
     image: /assets/img/concepts/lexical-relations.png
     summary: How one word form fans out into senses and how those senses relate — homonymy and polysemy are relations of form, synonymy and antonymy relate equal senses, hyponymy and meronymy build hierarchy.
 
+  - id: search-engine-architecture
+    label: Web Search Engine Architecture
+    group: retrieval
+    keywords:
+      [
+        search engine,
+        web search,
+        architecture,
+        crawler,
+        crawling,
+        url frontier,
+        inverted index,
+        indexing,
+        index build,
+        sharding,
+        ann index,
+        vector index,
+        candidate generation,
+        multi-stage ranking,
+        cascade ranking,
+        telescoping,
+        learning to rank,
+        ltr,
+        query understanding,
+        serp,
+        snippet,
+        click logs,
+        knowledge graph,
+      ]
+    image: /assets/img/concepts/search-engine-architecture.png
+    summary: The end-to-end system three planes deep — an offline plane that crawls, processes, and indexes the web; an online plane that turns a query into a ranked page in a few hundred milliseconds through a widening-cost cascade; and a learning loop that feeds interaction logs back into the models both planes run on.
+
 edges:
   - [transformer, self-attention]
   - [transformer, positional-encoding]
@@ -273,3 +305,8 @@ edges:
   - [lexical-relations, contextual-embedding]
   - [lexical-relations, bm25]
   - [lexical-relations, dense-retrieval]
+  - [search-engine-architecture, bm25]
+  - [search-engine-architecture, dense-retrieval]
+  - [search-engine-architecture, reranking]
+  - [search-engine-architecture, rag]
+  - [search-engine-architecture, evaluation]
